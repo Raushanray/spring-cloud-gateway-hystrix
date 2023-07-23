@@ -1,5 +1,8 @@
 package com.raushan.os.api.controller;
 
+import com.raushan.os.api.common.Payment;
+import com.raushan.os.api.common.TransactionRequest;
+import com.raushan.os.api.common.TransactionResponse;
 import com.raushan.os.api.entity.Order;
 import com.raushan.os.api.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +19,9 @@ public class OrderController {
     private OrderService service;
 
     @PostMapping("/bookOrder")
-    public Order bookOrder(@RequestBody Order order){
-        return service.saveOrder(order);
+    public TransactionResponse bookOrder(@RequestBody TransactionRequest request){
+
+        return service.saveOrder(request);
+
     }
 }

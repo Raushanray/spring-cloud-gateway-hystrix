@@ -7,6 +7,7 @@ spring:
   application:
     name: ORDER-SERVICE
 
+
 eureka:
   client:
     register-with-eureka: true
